@@ -243,6 +243,13 @@ export const theme = createTheme({
     },
   },
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          scrollBehavior: "smooth",
+        },
+      },
+    },
     MuiAppBar: {
       styleOverrides: {
         root: {
@@ -256,44 +263,48 @@ export const theme = createTheme({
         root: {
           "&:hover": {
             backgroundColor: "#ffffff",
-            color: "#fc0000",
+            color: "#fc0000", 
             border: "1.5px solid #fc0000",
           },
-          textTransform: "none", // Removed uppercase
+          textTransform: "none", 
           fontFamily: 'Gilroy, Poppins, sans-serif',
-          fontSize: "14px", // Decreased font size
-          borderRadius: "4px",
-          height: "40px", // Adjusted height
-          padding: "10px 20px", // Adjusted padding
-          width: "auto",
-          color: "#ffffff",
+          fontSize: "14px", 
+          borderRadius: "4px", 
+          height: "40px", 
+          padding: "10px 20px", 
+          width: "auto", 
+          color: "#ffffff", 
           backgroundColor: "#fc0000",
+          border: "none",
+          transition: "all 0.3s ease", 
         },
         outlined: {
-          '&:hover': {
-            color: '#ffffff',
-            border: "1.5px solid #fc0000",
-            backgroundColor: '#fc0000',
+          "&:hover": {
+            color: '#ffffff', 
+            border: "1.5px solid #fc0000", 
+            backgroundColor: '#fc0000', 
             '& img': {
               filter: 'brightness(0) invert(1)',
             },
             '& .MuiTypography-root': {
-              color: 'white',
+              color: '#ffffff', 
             },
           },
-          textTransform: "none", // Removed uppercase
+          textTransform: "none", 
           fontFamily: 'Gilroy, Poppins, sans-serif',
-          fontSize: "14px", // Decreased font size
-          borderRadius: "4px",
-          height: "40px", // Adjusted height
-          padding: "10px 20px", // Adjusted padding
-          width: "auto",
-          border: "1.5px solid #fc0000",
-          backgroundColor: '#fc0000',
-          color: '#fc0000',
+          fontSize: "14px", 
+          borderRadius: "4px", 
+          height: "40px", 
+          padding: "10px 20px", 
+          width: "auto", 
+          border: "1.5px solid #fc0000", 
+          backgroundColor: 'transparent',
+          color: '#fc0000', 
+          transition: "all 0.3s ease", 
         },
       },
     },
+    
     MuiTextField: {
       styleOverrides: {
         root: {

@@ -1,6 +1,7 @@
 import dezignshark from './logos/dezignshark.png';
 import google from './logos/google.png';
-import MainVideo from './Videos/MainVideo.mp4';
+import backgroundshark from './images/backgroundshark.png';
+// import MainVideo from './Videos/MainVideo.mp4';
 
 
 import slider1 from './logos/Slider/slider1.png';
@@ -19,15 +20,35 @@ import slider13 from './logos/Slider/slider13.png';
 import slider14 from './logos/Slider/slider14.png';
 import slider15 from './logos/Slider/slider15.png';
 
+import reviewimage1 from './images/review/review.png';
 
-export {default as brandsectionimage } from './images/brandsection.jpg';
-//Slider Logos
+
+//Gallery 
+
+import slide1 from './images/Gallery/slide1.jpeg';
+import slide2 from './images/Gallery/slide2.jpeg';
+import slide3 from './images/Gallery/slide3.jpeg';
+import slide4 from './images/Gallery/slide4.jpeg';
+import slide5 from './images/Gallery/slide5.jpeg';
+import slide6 from './images/Gallery/slide6.jpeg';
+
+
+
+
 
 
 import insights1 from './images/insights1.jpeg';
 import insights2 from './images/insights2.png';
 import insights3 from './images/insights3.jpeg';
 
+
+//about us 
+
+import aboutus from './images/Aboutus.jpg';
+
+
+import rajiv from './images/persons/rajiv.jpg';
+import priya from './images/persons/priya.png';
 
 export const SliderLogos = {
     slider1,
@@ -51,12 +72,22 @@ export const SliderLogos = {
 export const logos = {
     dezignshark,
     google,
+    backgroundshark,
+}
+
+export const Aboutus = {
+    aboutus,
+}
+
+
+export const Persons = {
+    rajiv,
+    priya,
 }
 
 
 
 //review
-import reviewimage1 from './images/review/review.png';
 
 export const InsightsImages = {
     insights1,
@@ -68,3 +99,18 @@ export const InsightsImages = {
 export const ReviewsImages = {
     reviewimage1,
 }
+
+
+export const GalleryImages = {
+    slide1,
+    slide2,
+    slide3,
+    slide4,
+    slide5,
+    slide6,
+}
+
+
+
+export {default as brandsectionimage } from './images/brandsection.jpg';
+//Slider Logos

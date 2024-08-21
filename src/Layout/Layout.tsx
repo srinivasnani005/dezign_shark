@@ -1,12 +1,13 @@
-// Layout.tsx
 import React, { useState, useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Header from './Header';
 import { Box } from '@mui/material';
 import './Layout.css'; 
 
 const Layout: React.FC = () => {
-  const [selectedTab, setSelectedTab] = useState('/dashboard');
+  const location = useLocation();
+  const [selectedTab, setSelectedTab] = useState(location.pathname); // Set initial selectedTab based on location
+
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -19,6 +20,11 @@ const Layout: React.FC = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    // Update selectedTab when the route changes
+    setSelectedTab(location.pathname);
+  }, [location.pathname]);
 
   return (
     <Box className="layout-container">
