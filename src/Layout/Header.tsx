@@ -21,6 +21,7 @@ import { FaDribbble, FaFacebookF, FaTwitter } from 'react-icons/fa';
 import { logos } from '../assets';
 import AnimatedButton from '../Buttons/AnimatesButton';
 import './Header.css'; // Import the CSS file for styling
+import ModalForm from '../Components/ModalForm/ModalForm';
 
 interface HeaderProps {
   selectedTab: string;
@@ -29,10 +30,21 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ selectedTab, onTabChange }) => {
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [subMenuVisible, setSubMenuVisible] = useState(false);
   const [drawerSubMenuOpen, setDrawerSubMenuOpen] = useState<string | null>(null);
+
+  
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
 
   const handleTabChange = (event: React.ChangeEvent<{}>, newValue: string) => {
     onTabChange(newValue);
@@ -71,6 +83,9 @@ const Header: React.FC<HeaderProps> = ({ selectedTab, onTabChange }) => {
   const handleDrawerSubMenuToggle = (menu: string) => {
     setDrawerSubMenuOpen(drawerSubMenuOpen === menu ? null : menu);
   };
+
+
+
 
   const tabLabels = [
     { label: 'Dashboard', route: '/dashboard' },
@@ -239,7 +254,7 @@ const Header: React.FC<HeaderProps> = ({ selectedTab, onTabChange }) => {
                 ) : null
               ))}
             </Tabs>
-            <AnimatedButton onClick={() => window.open('/brochure.pdf', '_blank')}>
+            <AnimatedButton  onClick={handleClickOpen}>
               Download Brochure
             </AnimatedButton>
           </Box>
@@ -385,7 +400,7 @@ const Header: React.FC<HeaderProps> = ({ selectedTab, onTabChange }) => {
           <List>
             <ListItem
               button
-              onClick={() => window.open('/brochure.pdf', '_blank')}
+              onClick={handleClickOpen}
               sx={{
                 '&:hover': {
                   backgroundColor: '#fc0000',
@@ -404,6 +419,8 @@ const Header: React.FC<HeaderProps> = ({ selectedTab, onTabChange }) => {
           </List>
         </Box>
       </Drawer>
+
+      <ModalForm open={open} handleClose={handleClose} />
 
       <Box
         sx={{

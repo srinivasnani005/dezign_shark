@@ -84,7 +84,6 @@ const AboutUsForm: React.FC = () => {
         </Grid>
       </Grid>
 
-      {/* Form */}
       <Box
         component="form"
         sx={{

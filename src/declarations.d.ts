@@ -8,3 +8,4 @@ declare module "*.json" {
   export default value;
 }
 declare module "*.mp4";
+declare module "*.pdf"; 
