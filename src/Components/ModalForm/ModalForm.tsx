@@ -72,7 +72,17 @@ const ModalForm: React.FC<ModalFormProps> = ({ open, handleClose }) => {
   };
 
   return (
-    <Dialog open={open} onClose={handleDialogClose} fullWidth maxWidth="sm" PaperProps={{ sx: { backgroundColor: '#333', color: '#fff', position: 'relative' } }}>
+    <Dialog open={open} onClose={handleDialogClose} fullWidth maxWidth="sm" 
+    PaperProps={{ sx: { 
+                  //backgroundColor : '#333',
+                    backgroundColor: 'rgba(0, 0, 0, 0.30)',
+                    backdropFilter: 'blur(8px)',
+                    width: '100%',
+                    boxShadow: 'none', 
+                    color: '#fff', 
+                    position: 'relative' 
+                    } 
+                    }}>
       <Box
         sx={{
           position: 'absolute',

@@ -195,16 +195,16 @@ export const theme = createTheme({
       fontSize: "12px",
       color: "#ffffff",
       "@media (min-width:600px)": {
-        fontSize: "14px",
+        fontSize: "12px",
       },
       "@media (min-width:900px)": {
         fontSize: "16px",
       },
       "@media (min-width:1200px)": {
-        fontSize: "18px",
+        fontSize: "17px",
       },
       "@media (min-width:1536px)": {
-        fontSize: "20px",
+        fontSize: "18px",
       },
     },
     caption: {

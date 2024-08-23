@@ -33,9 +33,40 @@ import slide5 from './images/Gallery/slide5.jpeg';
 import slide6 from './images/Gallery/slide6.jpeg';
 
 
+//webdevelopment
+
+import webdev1 from './images/webdev/webdev1.jpg';
+import webdev2 from './images/webdev/webdev2.jpg';
+
+
+//Graphic designing
+import graphicdesign1 from './images/GraphicDesign/Graphicdesign1.jpg';
+import graphicdesign2 from './images/GraphicDesign/Graphicdesign2.jpg';
+
+
+//Branding 
+import branding1 from './images/Branding/branding1.jpg';
+import branding2 from './images/Branding/branding2.jpg';
+
+
+//SMM
+import smm1 from './images/SMM/smm1.jpg';
+import smm2 from './images/SMM/smm2.jpg';
 
 
 
+//SEO
+import seo1 from './images/SEO/seo1.jpg';
+import seo2 from './images/SEO/seo2.jpg';
+
+//PPC
+import ppc1 from './images/PPC/ppc1.jpg';
+import ppc2 from './images/PPC/ppc2.jpg';
+
+
+
+//services
+import servicebackground from './images/Services/servicebackgroundstaff.png';
 
 import insights1 from './images/insights1.jpeg';
 import insights2 from './images/insights2.png';
@@ -111,6 +142,50 @@ export const GalleryImages = {
 }
 
 
+//web development
+export const WebDevelopmentImages = {
+    webdev1,
+    webdev2,
+}
+
+
+//Graphic designing
+export const GraphicDesignImages = {
+    graphicdesign1,
+    graphicdesign2,
+}
+
+//Branding
+export const BrandingImages = {
+    branding1,
+    branding2,
+}
+
+
+//SMM
+export const SMMImages = {
+    smm1,
+    smm2,
+}
+
+//SEO
+export const SEOImages = {
+    seo1,
+    seo2,
+}
+
+
+//PPC
+export const PPCImages = {
+    ppc1,
+    ppc2,
+}
+
+
+//services
+export const ServiceImages = {
+    servicebackground,
+}
 
 export {default as brandsectionimage } from './images/brandsection.jpg';
 //Slider Logos

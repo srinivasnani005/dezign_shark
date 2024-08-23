@@ -19,7 +19,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { FaDribbble, FaFacebookF, FaTwitter } from 'react-icons/fa';
 import { logos } from '../assets';
-import AnimatedButton from '../Buttons/AnimatesButton';
+import AnimatedButton from '../Components/Buttons/AnimatesButton';
 import './Header.css'; // Import the CSS file for styling
 import ModalForm from '../Components/ModalForm/ModalForm';
 
