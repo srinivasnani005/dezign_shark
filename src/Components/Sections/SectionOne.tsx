@@ -20,7 +20,7 @@ const SectionOne: React.FC<SectionOneProps> = ({ data }) => {
       flexDirection={isMobile ? 'column' : 'row'}
       justifyContent="space-between"
       alignItems="center"
-      p={2}
+      p={{ xs: 2, sm: 3, md: 4 }}
       sx={{ backgroundColor: theme.palette.background.default }}
     >
       {/* Left Side */}
@@ -29,14 +29,23 @@ const SectionOne: React.FC<SectionOneProps> = ({ data }) => {
         flexDirection="column"
         justifyContent="center"
         flex={1}
-        px={4}
-        textAlign={isMobile ? 'center' : 'left'}
+        px={{ xs: 2, sm: 3, md: 4 }}
+        textAlign={'left'}
         mb={isMobile ? 4 : 0}
       >
-        <Typography variant="h2" gutterBottom sx={{ fontWeight: 700 }}>
+        <Typography variant={isMobile ? 'h4' : 'h2'} gutterBottom sx={{ fontWeight: 700 }}>
           {data.title}
         </Typography>
-        <Divider sx={{ height: 3, width: '80px', mb: 2, bgcolor: theme.palette.secondary.main, borderRadius: 2 }} />
+        <Divider
+          sx={{
+            height: 3,
+            width: '90px',
+            mb: 2,
+            bgcolor: theme.palette.secondary.main,
+            borderRadius: 2,
+            alignSelf: 'flex-start',
+          }}
+        />
         <Typography variant="body1" paragraph sx={{ textAlign: 'justify' }}>
           {data.description.split('\n').map((item, index) => (
             <span key={index}>
@@ -50,11 +59,10 @@ const SectionOne: React.FC<SectionOneProps> = ({ data }) => {
           color="primary"
           sx={{
             width: 'fit-content',
-            alignSelf: isMobile ? 'center' : 'flex-start',
-            px: 6,
-            py: 3,
+            alignSelf: 'flex-start',
+            px: { xs: 4, sm: 5, md: 6 },
+            py: { xs: 2, sm: 2.5, md: 3 },
             mt: 2,
-            mb:2,
             fontSize: { xs: '0.875rem', md: '1rem' },
           }}
         >
@@ -68,13 +76,14 @@ const SectionOne: React.FC<SectionOneProps> = ({ data }) => {
         justifyContent="center"
         alignItems="center"
         flex={1}
-        p={4}
-    >
+        p={{ xs: 2, sm: 3, md: 4 }}
+        sx={{ width: '100%' }}
+      >
         <img
           src={data.image}
           alt="About Us"
           style={{
-            maxWidth: '100%',
+            maxWidth: '90%',
             height: 'auto',
             borderRadius: '8px',
           }}

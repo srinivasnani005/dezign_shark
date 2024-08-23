@@ -1,7 +1,7 @@
 import dezignshark from './logos/dezignshark.png';
 import google from './logos/google.png';
 import backgroundshark from './images/backgroundshark.png';
-// import MainVideo from './Videos/MainVideo.mp4';
+import MainVideo from './Videos/MainVideo.mp4';
 
 
 import slider1 from './logos/Slider/slider1.png';
@@ -140,6 +140,9 @@ export const GalleryImages = {
     slide5,
     slide6,
 }
+
+//Main Video
+export { MainVideo };
 
 
 //web development

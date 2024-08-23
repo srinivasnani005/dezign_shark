@@ -11,7 +11,7 @@ const GetBrochure: React.FC = () => {
         color: '#fff',
         minHeight: '100vh',
         px: 7,
-        py: 4,
+        py: { xs: 2, sm: 1, md: 2 },
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',

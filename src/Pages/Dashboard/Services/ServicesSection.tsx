@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Grid, Card, CardContent, Link } from '@mui/material';
+import { Box, Typography, Grid, Card, CardContent, Link, useMediaQuery, useTheme } from '@mui/material';
 import { Search, Share, TrendingUp } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 
@@ -37,6 +37,8 @@ const features: Feature[] = [
 
 const ServiceSection: React.FC = () => {
   const navigate = useNavigate();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const handleShowMore = (route: string) => {
     navigate(route);
@@ -47,49 +49,48 @@ const ServiceSection: React.FC = () => {
       sx={{
         backgroundColor: '#000',
         color: '#fff',
-        minHeight: '100vh',
-        px: 7,
-        py: 2,
+        px: { xs: 4, sm: 6, md: 8 },
+        py: { xs: 2, sm: 3, md: 4 }, 
         textAlign: 'center',
       }}
     >
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          mb: 6,
+      <Typography
+        variant={isMobile ? 'h4' : 'h3'}
+        sx={{ 
+          fontWeight: 700, 
+          maxWidth: { xs: '90%', sm: '80%', md: '70%' },
+          mb: { xs: 4, sm: 6 }, 
+          mx: 'auto'
         }}
       >
-        <Typography variant="h3" sx={{ fontWeight: 700, maxWidth: '60%', textAlign: 'center' }}>
-          Services We Provide as a Leading Digital Marketing Agency in Hyderabad
-        </Typography>
-      </Box>
+        Services We Provide as a Leading Digital Marketing Agency in Hyderabad
+      </Typography>
 
-      <Grid container spacing={4} justifyContent="center">
+      <Grid container spacing={3} justifyContent="center">
         {features.map((feature, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
             <Card
               sx={{
                 backgroundColor: '#333',
                 color: '#fff',
-                height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 textAlign: 'center',
-                borderRadius: '14px',
+                borderRadius: '10px',
                 p: 2,
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                 '&:hover': {
                   boxShadow: '0 15px 30px rgba(0,0,0,0.4)',
-                  transform: 'translateY(-10px)',
+                  transform: 'translateY(-8px)',
                   cursor: 'pointer',
                 },
               }}
+              onClick={() => handleShowMore(feature.route)}
             >
               {feature.icon}
-              <CardContent>
-                <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
+              <CardContent sx={{ flexGrow: 1 }}>
+                <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
                   {feature.title}
                 </Typography>
                 {feature.subtitle && (
@@ -103,9 +104,12 @@ const ServiceSection: React.FC = () => {
                     component="button"
                     variant="body2"
                     sx={{ color: '#fc0000', textDecoration: 'underline', cursor: 'pointer' }}
-                    onClick={() => handleShowMore(feature.route)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleShowMore(feature.route);
+                    }}
                   >
-                    Show More{'...'}
+                    See More...
                   </Link>
                 </Typography>
               </CardContent>

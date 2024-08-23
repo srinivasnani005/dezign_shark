@@ -17,7 +17,7 @@ import { useNavigate } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import { FaDribbble, FaFacebookF, FaTwitter } from 'react-icons/fa';
+import { FaDribbble, FaFacebookF, FaTwitter, FaUnderline } from 'react-icons/fa';
 import { logos } from '../assets';
 import AnimatedButton from '../Components/Buttons/AnimatesButton';
 import './Header.css'; // Import the CSS file for styling
@@ -142,7 +142,7 @@ const Header: React.FC<HeaderProps> = ({ selectedTab, onTabChange }) => {
         }}
       >
         <Toolbar sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
-          <Box sx={{ display: 'flex', alignItems: 'center', ml: 5, cursor: 'pointer' }} onClick={() => handleTabChange(null as any, '/dashboard')}>
+          <Box sx={{ display: 'flex', alignItems: 'center', ml: { xs: 2, md: 4 }, cursor: 'pointer' }} onClick={() => handleTabChange(null as any, '/dashboard')}>
             <img src={logos.dezignshark} alt="Logo" style={{ height: '40px' }} />
           </Box>
           <Box

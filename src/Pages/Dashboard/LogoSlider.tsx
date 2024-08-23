@@ -29,22 +29,50 @@ const LogoSlider = () => {
     dots: false,
     infinite: true,
     speed: 700,
-    slidesToShow: 5,
+    slidesToShow: 6, 
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
     draggable: true,
     swipeToSlide: true,
+    responsive: [
+      {
+        breakpoint: 1024, 
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 768, 
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 480,  
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 360, 
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
   };
 
   return (
-    <Box sx={{ 
-      backgroundColor: '#000000', 
-      padding: '45px 70px',  
-      position: 'relative',
-      overflow: 'hidden',
-    }}>
+    <Box
+      sx={{
+        backgroundColor: '#000000',
+        padding: { xs: '20px 10px', sm: '30px 20px', md: '45px 70px' }, 
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
       <Slider {...settings}>
         {logos.map((logo, index) => (
           <Box
@@ -53,16 +81,16 @@ const LogoSlider = () => {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              height: '100px',
-              width: '100px',
-              padding: '0 10px',  
+              height: { xs: '60px', sm: '80px', md: '100px' },  
+              width: 'auto',
+              padding: { xs: '0 5px', sm: '0 8px', md: '0 10px' }, 
             }}
           >
             <img
               src={logo}
               alt={`Company logo ${index + 1}`}
               style={{
-                height: '100px', 
+                height: '100%',
                 width: 'auto',
                 objectFit: 'contain',
               }}
