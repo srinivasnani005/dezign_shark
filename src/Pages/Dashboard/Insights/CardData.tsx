@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import CardDetails from '../../../Components/CardDetails/CardDetails';
 import { insightsData } from './Data';
+import Footer from '../../Footer/Footer';
 
 
 
@@ -13,7 +14,13 @@ const CardData: React.FC = () => {
     return <div>Insight not found.</div>;
   }
 
-  return <CardDetails data={data} />;
+  return (
+          <>
+            <CardDetails data={data} />
+            <Footer />
+          </>
+  );
+  
 };
 
 export default CardData;

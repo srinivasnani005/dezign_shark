@@ -15,9 +15,12 @@ const CustomInputWrapper = styled(InputBase)(({ theme }) => ({
     backgroundColor: '#F8F8F8',
     border: '1px solid #33333333',
     fontSize: 16,
-    padding: '14px 14px',
+    padding: '12px 14px',
     transition: theme.transitions.create(['border-color', 'box-shadow']),
     borderRadius: '8px',
+    '&::placeholder': {
+      color: '#000',
+    },
     '&:focus': {
       borderColor: '#7643EB80',
       boxShadow: '0px 3px 6px #7643EB4D',

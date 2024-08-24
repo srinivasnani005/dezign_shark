@@ -53,14 +53,14 @@ const Reviews: React.FC = () => {
         backgroundColor: '#000',
         color: '#fff',
         px: { xs: 3, sm: 5, md: 7 },
-        py: { xs: 5, sm: 7, md: 8 }, // Adjusted padding for better alignment
-        mt: { xs: 0, sm: '-30px', md: '-60px' }, // Reduced margin-top to minimize gap
+        py: { xs: 1, sm: 2, md: 2 }, 
+        mt: { xs: 0, sm: '-30px', md: '-60px' }, 
         textAlign: 'center',
       }}
     >
       <Typography
         variant="h4"
-        sx={{ fontWeight: 700, mb: 5, maxWidth: '80%', mx: 'auto' }}
+        sx={{ fontWeight: 700, mb: 5, maxWidth: '80%' }}
       >
         Hear from Our Satisfied Clients
       </Typography>

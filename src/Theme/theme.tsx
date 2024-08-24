@@ -315,6 +315,7 @@ export const theme = createTheme({
           '& input::placeholder': {
             fontSize: '14px', // Adjusted placeholder size
             fontFamily: 'Gilroy, Poppins, sans-serif',
+            color : '#2B2D22',
           },
           '& input::-webkit-outer-spin-button, & input::-webkit-inner-spin-button': {
             display: 'none',

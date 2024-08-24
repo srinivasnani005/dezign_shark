@@ -9,9 +9,8 @@ const GetBrochure: React.FC = () => {
       sx={{
         backgroundColor: '#000',
         color: '#fff',
-        minHeight: '100vh',
-        px: 7,
-        py: { xs: 2, sm: 1, md: 2 },
+        px :{ xs: 3.3, sm: 5, md: 7 },
+        py :{ xs: 2, sm: 5, md: 6 },
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -20,10 +19,18 @@ const GetBrochure: React.FC = () => {
       <Grid container spacing={4} justifyContent="center" >
         {/* Left Side - 55% width */}
         <Grid item xs={12} md={7} lg={7} sx={{ width: { md: '55%' }, textAlign: 'left', mt: 2 }}>
-          <Typography variant="h3" sx={{ fontWeight: 700, mb: 3 }}>
+          <Typography variant="h3" sx={{ fontWeight: 700, mb: 1.5 }}>
             Get a Custom Digital Marketing Strategy Today
           </Typography>
-          <Divider sx={{ borderColor: '#fff', mb: 3, width: '30%' }} />
+          <Divider
+            sx={{
+              height: 2,
+              width: '30%',
+              mb: 2,
+              bgcolor: "secondary.main",
+              borderRadius: 2,
+            }}
+          />
           <Typography variant="body2" sx={{ mb: 3, color: '#aaa' }}>
             Certainly! If you have any specific requirements or inquiries, feel free to provide more details or contact us directly. We're here to assist you.
           </Typography>

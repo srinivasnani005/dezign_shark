@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import { MainVideo } from '../../assets';
+import { MainVideo } from '../../assets/Videos/MainVideo.mp4';
 
 const DashboardTop: React.FC = () => {
   return (
