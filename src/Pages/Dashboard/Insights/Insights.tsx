@@ -4,9 +4,11 @@ import { Person } from '@mui/icons-material';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { InsightsImages } from '../../../assets';
+import { useNavigate } from 'react-router-dom';
 
 const articles = [
   {
+    id: 1,
     imageUrl: InsightsImages.insights1,
     author: 'Admin',
     date: 'August 18, 2024',
@@ -14,6 +16,7 @@ const articles = [
     description: 'Tired of mundane interiors that lack character and charm?',
   },
   {
+    id: 2,
     imageUrl: InsightsImages.insights2,
     author: 'Admin',
     date: 'August 18, 2024',
@@ -21,6 +24,7 @@ const articles = [
     description: 'Explore cutting-edge designs that redefine modern living.',
   },
   {
+    id: 3,
     imageUrl: InsightsImages.insights3,
     author: 'Admin',
     date: 'August 18, 2024',
@@ -30,6 +34,12 @@ const articles = [
 ];
 
 const Insights: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleReadMore = (id: number) => {
+    navigate(`/insights/${id}`);
+  };
+
   return (
     <Box
       sx={{
@@ -126,6 +136,7 @@ const Insights: React.FC = () => {
                 </Typography>
                 <Typography
                   variant="body2"
+                  onClick = {() => handleReadMore(article.id)}
                   sx={{
                     fontWeight: 400,
                     cursor: 'pointer',

@@ -10,3 +10,4 @@ export {default as PPC} from '../Services/DigitalMarketing/PPC/PPC';
 export {default as WebDevelopment} from '../Services/WebDevelopment/WebDevelopment';
 export {default as GraphicDesigning} from '../Services/GraphicDesigning/GraphicDesigning';
 export {default as Branding} from '../Services/Branding/Branding';
+export {default as CardData} from '../Dashboard/Insights/CardData';

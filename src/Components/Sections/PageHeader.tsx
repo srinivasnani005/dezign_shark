@@ -18,9 +18,11 @@ const PageHeader: React.FC<{ value: string }> = ({ value }) => {
         textAlign: 'center',
       }}
     >
-      <Typography variant="h2" sx={{ fontWeight: 700, color: '#fff', fontSize: { xs: '2rem', md: '3rem' } }}>
-        {value}
-      </Typography>
+      <Box sx={{width: '90%',}}>
+        <Typography variant="h2" sx={{ fontWeight: 700, color: '#fff', fontSize: { xs: '2rem', md: '3rem' } }}>
+          {value}
+        </Typography>
+      </Box>
     </Box>
   );
 };
