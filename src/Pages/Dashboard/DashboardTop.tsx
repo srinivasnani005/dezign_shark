@@ -30,7 +30,8 @@ const DashboardTop: React.FC = () => {
         controls={false}
         onContextMenu={(e) => e.preventDefault()} 
       >
-        <source src={MainVideo} type="video/mp4" />
+        {/* <source src={MainVideo} type="video/mp4" /> */}
+        <source src="https://dezignshark.com/wp-content/uploads/2024/05/DS_video_websitt-1-1.mp4" type="video/mp4" />
       </video>
     </Box>
   );
