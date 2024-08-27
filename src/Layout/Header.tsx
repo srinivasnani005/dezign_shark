@@ -17,10 +17,10 @@ import { useNavigate } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import { FaDribbble, FaFacebookF, FaTwitter, FaUnderline } from 'react-icons/fa';
+import { FaDribbble, FaFacebookF, FaTwitter } from 'react-icons/fa';
 import { logos } from '../assets';
 import AnimatedButton from '../Components/Buttons/AnimatesButton';
-import './Header.css'; // Import the CSS file for styling
+import './Header.css';
 import ModalForm from '../Components/ModalForm/ModalForm';
 
 interface HeaderProps {
@@ -36,7 +36,6 @@ const Header: React.FC<HeaderProps> = ({ selectedTab, onTabChange }) => {
   const [subMenuVisible, setSubMenuVisible] = useState(false);
   const [drawerSubMenuOpen, setDrawerSubMenuOpen] = useState<string | null>(null);
 
-  
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -44,7 +43,6 @@ const Header: React.FC<HeaderProps> = ({ selectedTab, onTabChange }) => {
   const handleClose = () => {
     setOpen(false);
   };
-
 
   const handleTabChange = (event: React.ChangeEvent<{}>, newValue: string) => {
     onTabChange(newValue);
@@ -84,28 +82,27 @@ const Header: React.FC<HeaderProps> = ({ selectedTab, onTabChange }) => {
     setDrawerSubMenuOpen(drawerSubMenuOpen === menu ? null : menu);
   };
 
-
-
-
   const tabLabels = [
     { label: 'Dashboard', route: '/dashboard' },
     { label: 'About', route: '/about' },
-    // { label: 'Services', route: '/services' },
   ];
 
   const tableLabels2 = [
-    // { label: 'Services', route: '/services' },
     { label: 'Blog', route: '/blog' },
     { label: 'Gallery', route: '/gallery' },
     { label: 'Contact Us', route: '/contact-us' },
   ];
 
   const serviceMenuItems = [
-    { label: 'Digital Marketing', submenu: [
-      { label: 'SEO', route: '/services/digital-marketing/seo' },
-      { label: 'SMM', route: '/services/digital-marketing/smm' },
-      { label: 'PPC', route: '/services/digital-marketing/ppc' },
-    ]},
+    {
+      label: 'Digital Marketing',
+      route: '/services/digital-marketing',
+      submenu: [
+        { label: 'Search Engine Optimization (SEO)', route: '/services/digital-marketing/seo' },
+        { label: 'Social Media Marketing (SMM)', route: '/services/digital-marketing/smm' },
+        { label: 'Pay-Per-Click (PPC)', route: '/services/digital-marketing/ppc' },
+      ],
+    },
     { label: 'Graphic Designing', route: '/services/graphic-designing' },
     { label: 'Web Development', route: '/services/web-development' },
     { label: 'Branding', route: '/services/branding' },
@@ -116,7 +113,7 @@ const Header: React.FC<HeaderProps> = ({ selectedTab, onTabChange }) => {
     color: '#FFFFFF80',
     fontWeight: 'bold',
     '&:hover': {
-      color: '#fc0000', 
+      color: '#fc0000',
     },
   };
 
@@ -142,7 +139,10 @@ const Header: React.FC<HeaderProps> = ({ selectedTab, onTabChange }) => {
         }}
       >
         <Toolbar sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
-          <Box sx={{ display: 'flex', alignItems: 'center', ml: { xs: 2, md: 4 }, cursor: 'pointer' }} onClick={() => handleTabChange(null as any, '/dashboard')}>
+          <Box
+            sx={{ display: 'flex', alignItems: 'center', ml: { xs: 2, md: 4 }, cursor: 'pointer' }}
+            onClick={() => handleTabChange(null as any, '/dashboard')}
+          >
             <img src={logos.dezignshark} alt="Logo" style={{ height: '40px' }} />
           </Box>
           <Box
@@ -165,10 +165,10 @@ const Header: React.FC<HeaderProps> = ({ selectedTab, onTabChange }) => {
                   marginLeft: 1,
                 },
                 '& .Mui-selected': {
-                  color: '#fc0000', 
+                  color: '#fc0000',
                 },
                 '& .MuiTabs-indicator': {
-                  backgroundColor: '#fc0000', 
+                  backgroundColor: '#fc0000',
                 },
               }}
             >
@@ -203,24 +203,38 @@ const Header: React.FC<HeaderProps> = ({ selectedTab, onTabChange }) => {
               {dropdownVisible && (
                 <div className="dropdown-menu">
                   <ul>
-                    <li 
-                      onMouseEnter={handleSubMenuMouseEnter} 
+                    <li
+                      onMouseEnter={handleSubMenuMouseEnter}
                       onMouseLeave={handleSubMenuMouseLeave}
                     >
-                      Digital Marketing <ArrowDropDownIcon />
+                      <div onClick={() => handleNavigate('/services/digital-marketing')}>
+                        Digital Marketing <ArrowDropDownIcon />
+                      </div>
                       {subMenuVisible && (
                         <div className="sub-menu">
                           <ul>
-                            <li onClick={() => handleNavigate('/services/digital-marketing/seo')}>SEO</li>
-                            <li onClick={() => handleNavigate('/services/digital-marketing/smm')}>SMM</li>
-                            <li onClick={() => handleNavigate('/services/digital-marketing/ppc')}>PPC</li>
+                            <li onClick={() => handleNavigate('/services/digital-marketing/seo')}>
+                              Search Engine Optimization (SEO)
+                            </li>
+                            <li onClick={() => handleNavigate('/services/digital-marketing/smm')}>
+                              Social Media Marketing (SMM)
+                            </li>
+                            <li onClick={() => handleNavigate('/services/digital-marketing/ppc')}>
+                              Pay-Per-Click (PPC)
+                            </li>
                           </ul>
                         </div>
                       )}
                     </li>
-                    <li onClick={() => handleNavigate('/services/graphic-designing')}>Graphic Designing</li>
-                    <li onClick={() => handleNavigate('/services/web-development')}>Web Development</li>
-                    <li onClick={() => handleNavigate('/services/branding')}>Branding</li>
+                    <li onClick={() => handleNavigate('/services/graphic-designing')}>
+                      Graphic Designing
+                    </li>
+                    <li onClick={() => handleNavigate('/services/web-development')}>
+                      Web Development
+                    </li>
+                    <li onClick={() => handleNavigate('/services/branding')}>
+                      Branding
+                    </li>
                   </ul>
                 </div>
               )}
@@ -237,7 +251,7 @@ const Header: React.FC<HeaderProps> = ({ selectedTab, onTabChange }) => {
                   marginLeft: 1,
                 },
                 '& .Mui-selected': {
-                  color: '#fc0000', 
+                  color: '#fc0000',
                 },
                 '& .MuiTabs-indicator': {
                   backgroundColor: '#fc0000',
@@ -254,7 +268,7 @@ const Header: React.FC<HeaderProps> = ({ selectedTab, onTabChange }) => {
                 ) : null
               ))}
             </Tabs>
-            <AnimatedButton  onClick={handleClickOpen}>
+            <AnimatedButton onClick={handleClickOpen}>
               Download Brochure
             </AnimatedButton>
           </Box>
@@ -284,166 +298,84 @@ const Header: React.FC<HeaderProps> = ({ selectedTab, onTabChange }) => {
         }}
       >
         <Box sx={{ width: 250 }}>
-          <Box sx={{ display: 'flex', justifyContent: 'flex-end', p: 1 }}>
-            <IconButton onClick={handleDrawerToggle} sx={{ color: '#FFFFFF' }}>
-              <CloseIcon />
-            </IconButton>
-          </Box>
+          <IconButton
+            onClick={handleDrawerToggle}
+            sx={{ ml: 'auto', display: 'block', color: '#FFFFFF' }}
+          >
+            <CloseIcon />
+          </IconButton>
           <List>
-            {tabLabels.map((tab, index) => (
+            {tabLabels.concat(tableLabels2).map((tab, index) => (
               <ListItem
                 button
                 key={index}
-                onClick={() => {
-                  handleTabChange(null as any, tab.route);
-                  handleDrawerToggle();
-                }}
-                sx={{
-                  ...drawerItemStyles,
-                  backgroundColor: selectedTab === tab.route ? '#fc0000' : 'transparent',
-                  color: selectedTab === tab.route ? '#FFFFFF' : '#FFFFFF',
-                }}
+                onClick={() => handleTabChange(null as any, tab.route)}
+                sx={drawerItemStyles}
               >
-                <ListItemText
-                  primary={
-                    <Typography variant="body1" sx={{ color: 'inherit' }}>
-                      {tab.label}
-                    </Typography>
-                  }
-                />
+                <ListItemText primary={tab.label} />
               </ListItem>
             ))}
-          </List>
-          {/* <Divider sx={{ borderColor: '#FFFFFF' }} /> */}
-          <List>
-            {serviceMenuItems.map((item, index) => (
-              <React.Fragment key={index}>
-                <ListItem
-                  button
-                  onClick={() => {
-                    if (item.submenu) {
-                      handleDrawerSubMenuToggle(item.label);
-                    } else {
-                      handleNavigate(item.route);
-                      handleDrawerToggle();
-                    }
-                  }}
-                  sx={{
-                    ...drawerItemStyles,
-                    backgroundColor: drawerSubMenuOpen === item.label ? '#fc0000' : 'transparent',
-                  }}
-                >
-                  <ListItemText
-                    primary={
-                      <Typography variant="body1" sx={{ color: 'inherit', display: 'flex', alignItems: 'center' }}>
-                        {item.label}
-                        {item.submenu && <ArrowDropDownIcon sx={{ ml: 1 }} />}
-                      </Typography>
-                    }
-                  />
-                </ListItem>
-                {item.submenu && drawerSubMenuOpen === item.label && (
-                  <List sx={{ pl: 4 }}>
-                    {item.submenu.map((subItem, subIndex) => (
-                      <ListItem
-                        button
-                        key={subIndex}
-                        onClick={() => {
-                          handleNavigate(subItem.route);
-                          handleDrawerToggle();
-                        }}
-                        sx={{
-                          ...drawerItemStyles,
-                          backgroundColor: selectedTab === subItem.route ? '#fc0000' : 'transparent',
-                        }}
-                      >
-                        <ListItemText
-                          primary={
-                            <Typography variant="body2" sx={{ color: 'inherit' }}>
-                              {subItem.label}
-                            </Typography>
-                          }
-                        />
-                      </ListItem>
-                    ))}
-                  </List>
-                )}
-              </React.Fragment>
-            ))}
-          </List>
-          <List>
-            {tableLabels2.map((tab, index) => (
+            <Divider sx={{ backgroundColor: '#FFFFFF80' }} />
+            <ListItem button onClick={() => handleDrawerSubMenuToggle('Digital Marketing')}>
+              <ListItemText primary="Digital Marketing" />
+              <ArrowDropDownIcon />
+            </ListItem>
+            {drawerSubMenuOpen === 'Digital Marketing' && (
+              <List component="div" disablePadding>
+                {serviceMenuItems[0].submenu?.map((submenu, subIndex) => (
+                  <ListItem
+                    button
+                    key={subIndex}
+                    sx={{ pl: 4, ...drawerItemStyles }}
+                    onClick={() => handleNavigate(submenu.route)}
+                  >
+                    <ListItemText primary={submenu.label} />
+                  </ListItem>
+                ))}
+              </List>
+            )}
+            <Divider sx={{ backgroundColor: '#FFFFFF80' }} />
+            {serviceMenuItems.map((service, index) => (
               <ListItem
                 button
                 key={index}
-                onClick={() => {
-                  handleTabChange(null as any, tab.route);
-                  handleDrawerToggle();
-                }}
-                sx={{
-                  ...drawerItemStyles,
-                  backgroundColor: selectedTab === tab.route ? '#fc0000' : 'transparent',
-                  color: selectedTab === tab.route ? '#FFFFFF' : '#FFFFFF',
-                }}
+                onClick={() => handleNavigate(service.route)}
+                sx={drawerItemStyles}
               >
-                <ListItemText
-                  primary={
-                    <Typography variant="body1" sx={{ color: 'inherit' }}>
-                      {tab.label}
-                    </Typography>
-                  }
-                />
+                <ListItemText primary={service.label} />
               </ListItem>
             ))}
-          </List>
-          <Divider sx={{ borderColor: '#FFFFFF' }} />
-          <List>
+            <Divider sx={{ backgroundColor: '#FFFFFF80' }} />
             <ListItem
               button
               onClick={handleClickOpen}
-              sx={{
-                '&:hover': {
-                  backgroundColor: '#fc0000',
-                  color: '#FFFFFF',
-                },
-              }}
+              sx={drawerItemStyles}
             >
-              <ListItemText
-                primary={
-                  <Typography variant="body1" sx={{ color: '#FFFFFF' }}>
-                    Download Brochure
-                  </Typography>
-                }
-              />
+              <ListItemText primary="Download Brochure" />
             </ListItem>
           </List>
+          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+            <IconButton sx={{ color: '#FFFFFF' }} aria-label="Facebook">
+              <FaFacebookF />
+            </IconButton>
+            <IconButton sx={{ color: '#FFFFFF' }} aria-label="Twitter">
+              <FaTwitter />
+            </IconButton>
+            <IconButton sx={{ color: '#FFFFFF' }} aria-label="Dribbble">
+              <FaDribbble />
+            </IconButton>
+          </Box>
+          <Typography
+            variant="body2"
+            align="center"
+            sx={{ mt: 2, color: '#FFFFFF80' }}
+          >
+            © 2023 Your Company. All rights reserved.
+          </Typography>
         </Box>
       </Drawer>
 
       <ModalForm open={open} handleClose={handleClose} />
-
-      <Box
-        sx={{
-          position: 'fixed',
-          bottom: { xs: '10px', sm: '20px', md: '30px' },
-          right: { xs: '10px', sm: '10px', md: '10px' },
-          p: 2,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: 1,
-        }}
-      >
-        <IconButton href="#" aria-label="Facebook" sx={{ color: 'white' }}>
-          <FaFacebookF size={20} />
-        </IconButton>
-        <IconButton href="#" aria-label="Twitter" sx={{ color: 'white' }}>
-          <FaTwitter size={20} />
-        </IconButton>
-        <IconButton href="#" aria-label="Dribbble" sx={{ color: 'white' }}>
-          <FaDribbble size={20} />
-        </IconButton>
-      </Box>
     </>
   );
 };

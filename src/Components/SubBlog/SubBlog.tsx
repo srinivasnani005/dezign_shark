@@ -17,8 +17,8 @@ const SubBlog: React.FC<SubBlogProps> = ({ data }) => {
       flexDirection="column"
       gap={2}
       sx={{
-        px: 10,
-        py: 5,
+        px: { xs: 4, sm: 5, md: 7 },
+        py: { xs: 3, sm: 4, md: 5 },
       }}
     >
       {data.map((item, index) => (

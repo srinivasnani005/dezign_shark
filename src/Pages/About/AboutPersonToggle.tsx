@@ -25,13 +25,17 @@ const AboutPersonToggle: React.FC = () => {
   };
 
   return (
-    <Box sx={{ py: 7, px: 4, maxWidth: '1200px', margin: '0 auto' }}>
-      <Typography variant="h2" component="h2" gutterBottom sx={{ fontWeight: 700, textAlign: 'center', mb: 4 }}>
+    <Box sx={{ 
+      px: { xs: 7, sm: 5, md: 7 }, 
+      py: { xs: 3, sm: 4, md: 5 },
+      margin: '0 auto' 
+      }}>
+      <Typography variant="h3" component="h2" gutterBottom sx={{ fontWeight: 700, textAlign: 'center', mb: 4 }}>
         Driving Force Behind Design Shark
       </Typography>
 
-      {/* Center buttons with improved styling */}
-      <Box sx={{ display: 'flex', justifyContent: 'center', mb: 4 }}>
+      {/* Buttons for toggling between persons */}
+      <Box sx={{ display: 'flex', justifyContent: 'center', mb: 4, flexWrap: 'wrap' }}>
         <Button
           variant={selectedPerson === 'rajiv' ? 'contained' : 'outlined'}
           onClick={() => handlePersonChange('rajiv')}
@@ -39,6 +43,7 @@ const AboutPersonToggle: React.FC = () => {
             px: 4,
             py: 2,
             mx: 1,
+            my: 1,
             fontSize: '1rem',
             fontWeight: 600,
             backgroundColor: selectedPerson === 'rajiv' ? '#fc0000' : 'transparent',
@@ -58,9 +63,9 @@ const AboutPersonToggle: React.FC = () => {
             px: 4,
             py: 2,
             mx: 1,
+            my: 1,
             fontSize: '1rem',
             fontWeight: 600,
-
             backgroundColor: selectedPerson === 'Priya' ? '#fc0000' : 'transparent',
             color: selectedPerson === 'Priya' ? '#fff' : '#fc0000',
             '&:hover': {
@@ -73,21 +78,27 @@ const AboutPersonToggle: React.FC = () => {
         </Button>
       </Box>
 
-      {/* Details section with image */}
-      <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 4, alignItems: 'center', px: { xs: 2, md: 4 } }}>
-        <Box sx={{ flex: 1, textAlign: { xs: 'left', md: 'left' } }}>
-          <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 700 }}>
+      {/* Details section with image and description */}
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: { xs: 'column', md: 'row' },
+          gap: 4,
+          alignItems: 'center',
+        }}
+      >
+        <Box sx={{ flex: 1, textAlign:'left', order: { xs: 2, md: 1 } }}>
+          <Typography variant="h3" gutterBottom sx={{ fontWeight: 700 }}>
             {personData[selectedPerson].name}
           </Typography>
           <Divider sx={{ marginY: 2 }} />
-          <Typography variant="body1" paragraph sx={{ textAlign: 'justify' }}>
+          <Typography variant="body2" paragraph sx={{ textAlign: 'justify', mb: 3 }}>
             {personData[selectedPerson].description}
           </Typography>
           <Button
             variant="contained"
             onClick={() => navigate(`/${selectedPerson}32`)}
             sx={{
-              marginTop: 2,
               backgroundColor: '#fc0000',
               color: '#fff',
               '&:hover': { backgroundColor: '#e60000' },
@@ -102,7 +113,8 @@ const AboutPersonToggle: React.FC = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            mb: { xs: 4, md: 0 }, // margin bottom for mobile view
+            order: { xs: 1, md: 2 },
+            mb: { xs: 4, md: 0 },
           }}
         >
           <img
@@ -110,9 +122,10 @@ const AboutPersonToggle: React.FC = () => {
             alt={personData[selectedPerson].name}
             style={{
               width: '100%',
-              maxWidth: 400,
+              maxWidth: '400px',
               height: 'auto',
               borderRadius: '8px',
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
             }}
           />
         </Box>

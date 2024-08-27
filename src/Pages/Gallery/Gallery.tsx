@@ -10,7 +10,9 @@ const Gallery: React.FC = () => {
         <>
             <PageHeader value={"Gallery"} />
             <ImageSlider />
-            <FadeInOutCards />
+            <FadeInOutCards startsfrom={20} />
+            <FadeInOutCards startsfrom={0} />
+            <FadeInOutCards startsfrom={40} />
             <Footer />
         </>
     );

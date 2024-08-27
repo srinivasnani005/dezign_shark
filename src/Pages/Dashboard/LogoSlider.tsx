@@ -22,6 +22,10 @@ const LogoSlider = () => {
     SliderLogos.slider13,
     SliderLogos.slider14,
     SliderLogos.slider15,
+    SliderLogos.slider16,
+    SliderLogos.slider17,
+    SliderLogos.slider18,
+    SliderLogos.slider19,
   ];
 
   const settings = {

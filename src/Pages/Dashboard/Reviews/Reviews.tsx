@@ -54,13 +54,13 @@ const Reviews: React.FC = () => {
         color: '#fff',
         px: { xs: 3, sm: 5, md: 7 },
         py: { xs: 1, sm: 2, md: 2 }, 
-        mt: { xs: 0, sm: '-30px', md: '-60px' }, 
+        // mt: { xs: 0, sm: '-30px', md: '-60px' }, 
         textAlign: 'center',
       }}
     >
       <Typography
-        variant="h4"
-        sx={{ fontWeight: 700, mb: 5, maxWidth: '80%' }}
+        variant="h3"
+        sx={{ fontWeight: 700, mb: 5, maxWidth: '80%' , margin : '0 auto' }}
       >
         Hear from Our Satisfied Clients
       </Typography>
@@ -75,7 +75,8 @@ const Reviews: React.FC = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 borderRadius: '10px',
-                p: { xs: 1, sm: 2 , md: 1 }, // Adjusted padding for better alignment
+                mt: { xs: 2, sm: 3, md: 4 },
+                p: { xs: 1, sm: 2 , md: 1 },
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                 '&:hover': {
                   boxShadow: '0 15px 30px rgba(0,0,0,0.4)',

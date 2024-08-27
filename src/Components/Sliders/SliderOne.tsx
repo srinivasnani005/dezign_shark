@@ -13,7 +13,7 @@ type CardData = {
 
 type SliderOneProps = {
   cards: CardData[];
-  title?: string; 
+  title?: string;
   slidesToShow?: number;
   autoplaySpeed?: number;
 };
@@ -27,7 +27,7 @@ const NextArrow = (props: any) => {
         color: 'primary.main',
         position: 'absolute',
         top: '50%',
-        right: -15,
+        right: -16,
         transform: 'translate(0, -50%)',
         zIndex: 2,
         '&:hover': { backgroundColor: 'transparent' },
@@ -47,7 +47,7 @@ const PrevArrow = (props: any) => {
         color: 'primary.main',
         position: 'absolute',
         top: '50%',
-        left: -10,
+        left: -12,
         transform: 'translate(0, -50%)',
         zIndex: 2,
         '&:hover': { backgroundColor: 'transparent' },
@@ -90,9 +90,15 @@ const SliderOne: React.FC<SliderOneProps> = ({
   };
 
   return (
-    <Box sx={{ px: 8, py: 4, position: 'relative', overflow: 'hidden', backgroundColor: theme.palette.background.default }}>
+    <Box sx={{ 
+      px: { xs: 3, sm: 5, md: 7 },
+      py: { xs: 3, sm: 4, md: 5 },
+      position: 'relative', 
+      overflow: 'hidden',
+       backgroundColor: theme.palette.background.default 
+       }}>
       {title && (
-        <Box sx={{ textAlign: 'center', width: '90%', margin: 'auto' }}>
+        <Box sx={{ textAlign: 'center', width: { xs: '100%', md: '85%' }, margin: '0 auto' }}>
           <Typography
             variant="h2"
             align="center"
@@ -105,21 +111,26 @@ const SliderOne: React.FC<SliderOneProps> = ({
       )}
       <Slider {...settings}>
         {cards.map((card, index) => (
-          <Box key={index} sx={{ px: 2, display: 'flex', justifyContent: 'center' }}>
+          <Box key={index} sx={{display: 'flex', justifyContent: 'center' }}>
             <Card
               sx={{
                 color: theme.palette.primary.main,
-                backgroundColor: theme.palette.background.default,
+                backgroundColor: '#33333375',
                 border: '1px solid #E0E0E0',
                 borderRadius: '10px',
                 boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
                 cursor: 'pointer',
-                width: '100%',
+                width: { xs: '85%', sm: '80%', md: '90%' },
                 maxWidth: '350px',
                 mx: 'auto',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                height: '100%',
+                minHeight: '300px', // Set a minimum height for uniformity
               }}
             >
-              <CardContent sx={{ textAlign: 'center' }}>
+              <CardContent sx={{ textAlign: 'center', flex: 1 }}>
                 <Typography variant="h5" gutterBottom sx={{ color: theme.palette.primary.main, fontWeight: 700, mb: 4 }}>
                   {card.subheading}
                 </Typography>

@@ -19,11 +19,11 @@ const ImageSlider: React.FC = () => {
    arrows: false,
     dots: false,
     infinite: true,
-    speed: 700,
+    speed: 600,
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1600,
     pauseOnHover: true,
     draggable: true,
     swipeToSlide: true,
@@ -46,7 +46,10 @@ const ImageSlider: React.FC = () => {
   };
 
   return (
-    <Box sx={{ width: '100%', px: 2, py: 4 }}>
+    <Box sx={{ width: { xs: '105%', sm: '100%', md: '90%' }, margin: '0 auto', textAlign: 'center',
+      px: { xs: 4, sm: 5, md: 7 },
+      py: { xs: 3, sm: 4, md: 5 },
+    }}>
       <Slider {...settings}>
         {images.map((image, index) => (
           <Box
@@ -54,12 +57,11 @@ const ImageSlider: React.FC = () => {
             sx={{
               position: 'relative',
               overflow: 'hidden',
-              borderRadius: '8px',
               boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
               width: '200px', 
               height: '200px', 
               '& img': {
-                width: '96%',
+                width: { xs: '80%', sm: '80%', md: '96%' },
                 height: '96%',
                 objectFit: 'cover', 
               },

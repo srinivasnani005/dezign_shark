@@ -11,3 +11,4 @@ export {default as WebDevelopment} from '../Services/WebDevelopment/WebDevelopme
 export {default as GraphicDesigning} from '../Services/GraphicDesigning/GraphicDesigning';
 export {default as Branding} from '../Services/Branding/Branding';
 export {default as CardData} from '../Dashboard/Insights/CardData';
+export {default as DigitalMarketing} from '../Services/DigitalMarketing/DigitalMarketing';

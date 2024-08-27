@@ -1,5 +1,5 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import { Dashboard, NotFound, About, Gallery, ContactUs, Blog, GraphicDesigning, WebDevelopment, Branding, SEO, SMM, PPC, CardData } from "../Pages/Exports/Exports";
+import { Dashboard, NotFound, About, Gallery, ContactUs, Blog, GraphicDesigning, WebDevelopment, Branding, SEO, SMM, PPC, CardData, DigitalMarketing } from "../Pages/Exports/Exports";
 import Layout from '../Layout/Layout';
 
 const router = createBrowserRouter([
@@ -17,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path : "/services/digital-marketing",
+        element : <DigitalMarketing />
       },
       {
         path: "/services/digital-marketing/seo",
