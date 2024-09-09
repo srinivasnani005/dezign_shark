@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   AppBar,
   Toolbar,
@@ -13,7 +13,7 @@ import {
   Divider,
   Typography,
 } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
@@ -30,11 +30,19 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ selectedTab, onTabChange }) => {
   const navigate = useNavigate();
+  const location = useLocation(); // Added to track the current route
   const [open, setOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [subMenuVisible, setSubMenuVisible] = useState(false);
   const [drawerSubMenuOpen, setDrawerSubMenuOpen] = useState<string | null>(null);
+
+  // Ensure selectedTab is valid
+  useEffect(() => {
+    if (!tabLabels.concat(tableLabels2).some((tab) => tab.route === selectedTab)) {
+      onTabChange(location.pathname);
+    }
+  }, [location.pathname, selectedTab, onTabChange]);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -173,13 +181,11 @@ const Header: React.FC<HeaderProps> = ({ selectedTab, onTabChange }) => {
               }}
             >
               {tabLabels.map((tab, index) => (
-                tab.label !== 'Services' ? (
-                  <Tab
-                    key={index}
-                    label={tab.label}
-                    value={tab.route}
-                  />
-                ) : null
+                <Tab
+                  key={index}
+                  label={tab.label}
+                  value={tab.route}
+                />
               ))}
             </Tabs>
             <div
@@ -259,13 +265,11 @@ const Header: React.FC<HeaderProps> = ({ selectedTab, onTabChange }) => {
               }}
             >
               {tableLabels2.map((tab, index) => (
-                tab.label !== 'Services' ? (
-                  <Tab
-                    key={index}
-                    label={tab.label}
-                    value={tab.route}
-                  />
-                ) : null
+                <Tab
+                  key={index}
+                  label={tab.label}
+                  value={tab.route}
+                />
               ))}
             </Tabs>
             <AnimatedButton onClick={handleClickOpen}>

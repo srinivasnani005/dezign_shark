@@ -6,7 +6,7 @@ import './Layout.css';
 
 const Layout: React.FC = () => {
   const location = useLocation();
-  const [selectedTab, setSelectedTab] = useState(location.pathname); // Set initial selectedTab based on location
+  const [selectedTab, setSelectedTab] = useState(location.pathname); 
 
   const [isScrolled, setIsScrolled] = useState(false);
 
