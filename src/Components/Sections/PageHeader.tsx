@@ -9,7 +9,7 @@ const PageHeader: React.FC<{ value: string }> = ({ value }) => {
         position: 'relative',
         width: '100%',
         height: 0,
-        paddingBottom: { xs: '56.67%', md: '49.67%' },
+        paddingBottom: { xs: '55%', md: '20%' },
         backgroundImage: `url(${logos.backgroundshark})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',

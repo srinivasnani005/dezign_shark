@@ -1,122 +1,183 @@
-import React from 'react';
-import { Box, Typography, Grid, Card, CardContent, Link, useMediaQuery, useTheme } from '@mui/material';
-import { Search, Share, TrendingUp } from '@mui/icons-material';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useRef } from "react";
+import {
+  Box,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  Link,
+  useMediaQuery,
+  useTheme,
+  Container,
+} from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import gsap from "gsap";
+import { content_management, pay_per_click, seo } from "../../../assets";
 
 interface Feature {
-  icon: React.ReactNode;
+  image: string;
   title: string;
-  subtitle?: string;
   description: string;
   route: string;
 }
 
 const features: Feature[] = [
   {
-    icon: <Search fontSize="large" sx={{ color: '#fc0000' }} />,
-    title: 'Search Engine Optimization (SEO)',
-    subtitle: "We're not just an SEO provider; we're a partner you can rely on.",
-    description: 'We offer a comprehensive suite of SEO services, from keyword research to link building to content creation. We\'ll tailor our services to your specific needs. Third, we\'re committed to transparency and communication, so you\'ll always know what we\'re doing and why.',
-    route: '/services/digital-marketing/seo',
+    image: seo,
+    title: "Search Engine Optimization (SEO)",
+    description:
+      "Boost your business's online visibility with expert SEO services. Rank higher on Google, enhance credibility, and drive organic traffic. Our strategies include keyword research, optimized content, and high-quality backlinks.",
+    route: "/services/digital-marketing/seo",
   },
   {
-    icon: <Share fontSize="large" sx={{ color: '#fc0000' }} />,
-    title: 'Social Media Marketing (SMM)',
-    subtitle: "We're here to help you grow your business and reach your goals.",
-    description: 'We offer a wide range of social media marketing services, from strategy and planning to content creation and execution. We also offer a suite of tools and resources to help our clients succeed, and we\'re dedicated to providing the best possible service to our clients.',
-    route: '/services/digital-marketing/smm',
+    image: content_management,
+    title: "Social Media Management",
+    description:
+      "Enhance your brand with professional Social Media Marketing (SMM). Engage your audience with targeted campaigns on platforms like Facebook, Instagram, and LinkedIn. Build customer loyalty and increase brand visibility.",
+    route: "/services/digital-marketing/smm",
   },
   {
-    icon: <TrendingUp fontSize="large" sx={{ color: '#fc0000' }} />,
-    title: 'Pay-Per-Click Advertising (PPC)',
-    subtitle: 'Maximize your ROI with targeted PPC campaigns designed to drive conversions.',
-    description: 'We provide detailed analysis and reporting to ensure your campaigns are performing at their best. Our team will manage your PPC strategy from start to finish, including keyword research, ad creation, and continuous optimization.',
-    route: '/services/digital-marketing/ppc',
+    image: pay_per_click,
+    title: "Pay-Per-Click Advertising (PPC)",
+    description:
+      "Drive business growth with high-ROI PPC advertising. Generate quality leads and conversions with precision-targeted campaigns on Google Ads & Facebook. Increase brand reach and maximize returns on ad spend.",
+    route: "/services/digital-marketing/ppc",
   },
 ];
 
 const ServiceSection: React.FC = () => {
   const navigate = useNavigate();
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      sectionRef.current,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1.5, ease: "power3.out", stagger: 0.2 }
+    );
+  }, []);
 
   const handleShowMore = (route: string) => {
     navigate(route);
   };
 
   return (
-    <Box
-      sx={{
-        backgroundColor: '#000',
-        color: '#fff',
-        px: { xs: 4, sm: 6, md: 8 },
-        py: { xs: 2, sm: 3, md: 4 }, 
-        textAlign: 'center',
-      }}
-    >
-      <Typography
-        variant={isMobile ? 'h4' : 'h3'}
-        sx={{ 
-          fontWeight: 700, 
-          maxWidth: { xs: '90%', sm: '80%', md: '70%' },
-          mb: { xs: 4, sm: 6 }, 
-          mx: 'auto'
-        }}
-      >
-        Services We Provide as a Leading Digital Marketing Agency in Hyderabad
-      </Typography>
+    <Box ref={sectionRef} sx={{ backgroundColor: "#111", py: 6 }}>
+      <Container>
+        <Box textAlign="center" color="white">
+          <Typography
+            variant={isMobile ? "h4" : "h3"}
+            sx={{
+              fontWeight: 700,
+              maxWidth: { xs: "90%", sm: "80%", md: "70%" },
+              mb: { xs: 4, sm: 10 },
+              mx: "auto",
+              letterSpacing: 1.2,
+            }}
+          >
+            Services We Provide as a Leading Digital Marketing Agency in Hyderabad
+          </Typography>
 
-      <Grid container spacing={3} justifyContent="center">
-        {features.map((feature, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <Card
-              sx={{
-                backgroundColor: '#333',
-                color: '#fff',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                textAlign: 'center',
-                borderRadius: '10px',
-                p: 2,
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                '&:hover': {
-                  boxShadow: '0 15px 30px rgba(0,0,0,0.4)',
-                  transform: 'translateY(-8px)',
-                  cursor: 'pointer',
-                },
-              }}
-              onClick={() => handleShowMore(feature.route)}
-            >
-              {feature.icon}
-              <CardContent sx={{ flexGrow: 1 }}>
-                <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
-                  {feature.title}
-                </Typography>
-                {feature.subtitle && (
-                  <Typography variant="body2" sx={{ mb: 2 }}>
-                    {feature.subtitle}
-                  </Typography>
-                )}
-                <Typography variant="body2" sx={{ color: '#aaa', textAlign: 'justify' }}>
-                  {feature.description.split(' ').slice(0, 20).join(' ')}{' '}
-                  <Link
-                    component="button"
-                    variant="body2"
-                    sx={{ color: '#fc0000', textDecoration: 'underline', cursor: 'pointer' }}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleShowMore(feature.route);
+          <Grid container spacing={5} justifyContent="center">
+            {features.map((feature, index) => (
+              <Grid item xs={12} sm={6} md={4} key={index}>
+                <Card
+                  sx={{
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                    color: "white",
+                    borderRadius: "15px",
+                    boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.3)",
+                    transition: "transform 0.5s ease, box-shadow 0.5s ease",
+                    backdropFilter: "blur(10px)",
+                    overflow: "hidden",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    padding: 3,
+                    textAlign: "center",
+                    "&:hover": {
+                      transform: "scale(1.05)",
+                      boxShadow: "0 20px 40px rgba(0, 0, 0, 0.5)",
+                      cursor: "pointer",
+                    },
+                  }}
+                  onClick={() => handleShowMore(feature.route)}
+                >
+                  {/* Image Styled as Icon */}
+                  <Box
+                    sx={{
+                      width: "80px",
+                      height: "80px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      backgroundColor: "rgba(255, 255, 255, 0.2)",
+                      borderRadius: "50%",
+                      marginBottom: 2,
+                      transition: "transform 0.5s ease",
+                      "&:hover": { transform: "scale(1.2)" },
                     }}
                   >
-                    See More...
-                  </Link>
-                </Typography>
-              </CardContent>
-            </Card>
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
+                      style={{
+                        width: "60px",
+                        height: "60px",
+                        objectFit: "contain",
+                      }}
+                    />
+                  </Box>
+
+                  {/* Card Content */}
+                  <CardContent sx={{ textAlign: "center" }}>
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        fontWeight: 700,
+                        mb: 2,
+                        textTransform: "uppercase",
+                        letterSpacing: 1,
+                      }}
+                    >
+                      {feature.title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: "#ccc",
+                        textAlign: "justify",
+                        fontSize: "14px",
+                        lineHeight: "1.6",
+                      }}
+                    >
+                      {feature.description.split(" ").slice(0, 20).join(" ")}...{" "}
+                      <Link
+                        component="button"
+                        variant="body2"
+                        sx={{
+                          color: "#fc0000",
+                          textDecoration: "underline",
+                          cursor: "pointer",
+                          fontWeight: "bold",
+                        }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleShowMore(feature.route);
+                        }}
+                      >
+                        See More
+                      </Link>
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
           </Grid>
-        ))}
-      </Grid>
+        </Box>
+      </Container>
     </Box>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import MainVideo from '../../assets/Videos/MainVideo.mp4';
+// import MainVideo from '../../assets/Videos/MainVideo.mp4';
 
 const DashboardTop: React.FC = () => {
   return (
@@ -30,8 +30,8 @@ const DashboardTop: React.FC = () => {
         controls={false}
         onContextMenu={(e) => e.preventDefault()} 
       >
-        <source src={MainVideo} type="video/mp4" />
-        {/* <source src="https://dezignshark.com/wp-content/uploads/2024/05/DS_video_websitt-1-1.mp4" type="video/mp4" /> */}
+        {/* <source src={MainVideo} type="video/mp4" /> */}
+        <source src="https://dprstorage.b-cdn.net/dprstorage/dezign_shark.mp4" type="video/mp4" />
       </video>
     </Box>
   );

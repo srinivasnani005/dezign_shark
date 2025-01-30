@@ -96,20 +96,20 @@ const SliderOne: React.FC<SliderOneProps> = ({
       position: 'relative', 
       overflow: 'hidden',
        backgroundColor: theme.palette.background.default 
-       }}>
+       }} >
       {title && (
         <Box sx={{ textAlign: 'center', width: { xs: '100%', md: '85%' }, margin: '0 auto' }}>
           <Typography
             variant="h2"
             align="center"
             gutterBottom
-            sx={{ fontWeight: 700, mb: 5, mt: 2 }}
+            sx={{ fontWeight: 700, mb: 8, mt: 2 }}
           >
             {title}
           </Typography>
         </Box>
       )}
-      <Slider {...settings}>
+      <Slider {...settings} >
         {cards.map((card, index) => (
           <Box key={index} sx={{display: 'flex', justifyContent: 'center' }}>
             <Card

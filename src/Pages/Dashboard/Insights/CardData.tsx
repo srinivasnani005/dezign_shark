@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import CardDetails from '../../../Components/CardDetails/CardDetails';
 import { insightsData } from './Data';
-import Footer from '../../Footer/Footer';
+import Footer from '../../Old/Footer/Footer';
 
 
 

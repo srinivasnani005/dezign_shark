@@ -1,7 +1,7 @@
 import React from 'react';
 import PageHeader from '../../../Components/Sections/PageHeader';
 import SectionTwo from '../../../Components/Sections/SectionTwo';
-import Footer from '../../Footer/Footer';
+import Footer from '../../Old/Footer/Footer';
 import ServiceForm from '../../../Components/Forms/ServicesForm';
 import { BrandingImages } from '../../../assets';
 import SliderOne from '../../../Components/Sliders/SliderOne';

@@ -34,11 +34,12 @@ export const theme = createTheme({
     fontFamily: 'Gilroy, Poppins, sans-serif', 
     button: {
       textTransform: "none",
-      fontSize: "14px",
+      fontSize: "12px",
     },
+    
     h1: {
       fontFamily: 'Gilroy, Poppins, sans-serif',
-      fontSize: "30px",
+      fontSize: "28px",
       color: "#ffffff",
       "@media (min-width:600px)": {
         fontSize: "35px",
@@ -55,70 +56,69 @@ export const theme = createTheme({
     },
     h2: {
       fontFamily: 'Gilroy, Poppins, sans-serif',
-      fontSize: "26px",
+      fontSize: "24px",
       color: "#ffffff",
       "@media (min-width:600px)": {
-        fontSize: "30px",
+        fontSize: "28px",
       },
       "@media (min-width:900px)": {
-        fontSize: "35px",
+        fontSize: "36px",  // Decreased from 40px
       },
       "@media (min-width:1200px)": {
-        fontSize: "40px",
+        fontSize: "44px",  // Decreased from 48px
       },
       "@media (min-width:1536px)": {
-        fontSize: "45px",
+        fontSize: "52px",  // Decreased from 56px
       },
     },
     h3: {
       fontFamily: 'Gilroy, Poppins, sans-serif',
-      fontSize: "22px",
+      fontSize: "20px",
       color: "#ffffff",
       "@media (min-width:600px)": {
-        fontSize: "25px",
+        fontSize: "24px",  // Decreased from 28px
       },
       "@media (min-width:900px)": {
-        fontSize: "30px",
+        fontSize: "28px",  // Decreased from 32px
       },
       "@media (min-width:1200px)": {
-        fontSize: "35px",
+        fontSize: "36px",  // Decreased from 40px
       },
       "@media (min-width:1536px)": {
-        fontSize: "40px",
+        fontSize: "44px",  // Decreased from 48px
       },
     },
     h4: {
       fontFamily: 'Gilroy, Poppins, sans-serif',
-      fontSize: "20px",
-      color: "#ffffff",
+      fontSize: "16px",
       "@media (min-width:600px)": {
-        fontSize: "22px",
+        fontSize: "20px",  // Decreased from 24px
       },
       "@media (min-width:900px)": {
-        fontSize: "25px",
+        fontSize: "24px",  // Decreased from 28px
       },
       "@media (min-width:1200px)": {
-        fontSize: "30px",
+        fontSize: "28px",  // Decreased from 32px
       },
       "@media (min-width:1536px)": {
-        fontSize: "35px",
+        fontSize: "36px",  // Decreased from 40px
       },
     },
     h5: {
       fontFamily: 'Gilroy, Poppins, sans-serif',
-      fontSize: "18px",
+      fontSize: "14px",
       color: "#ffffff",
       "@media (min-width:600px)": {
-        fontSize: "20px",
+        fontSize: "16px",  // Decreased from 20px
       },
       "@media (min-width:900px)": {
-        fontSize: "22px",
+        fontSize: "20px",  // Decreased from 24px
       },
       "@media (min-width:1200px)": {
-        fontSize: "25px",
+        fontSize: "24px",  // Decreased from 28px
       },
       "@media (min-width:1536px)": {
-        fontSize: "28px",
+        fontSize: "28px",  // Decreased from 32px
       },
     },
     h6: {
@@ -126,119 +126,119 @@ export const theme = createTheme({
       fontSize: "16px",
       color: "#ffffff",
       "@media (min-width:600px)": {
-        fontSize: "18px",
+        fontSize: "14px",  // Decreased from 16px
       },
       "@media (min-width:900px)": {
-        fontSize: "20px",
+        fontSize: "16px",  // Decreased from 18px
       },
       "@media (min-width:1200px)": {
-        fontSize: "22px",
+        fontSize: "20px",  // Decreased from 24px
       },
       "@media (min-width:1536px)": {
-        fontSize: "24px",
+        fontSize: "24px",  // Decreased from 28px
       },
     },
     subtitle1: {
       fontFamily: 'Gilroy, Poppins, sans-serif',
-      fontSize: "18px",
+      fontSize: "16px",
       color: "#ffffff",
       opacity: "85%",
       "@media (min-width:600px)": {
-        fontSize: "20px",
+        fontSize: "18px",  // Decreased from 20px
       },
       "@media (min-width:900px)": {
-        fontSize: "22px",
+        fontSize: "20px",  // Decreased from 22px
       },
       "@media (min-width:1200px)": {
-        fontSize: "24px",
+        fontSize: "22px",  // Decreased from 24px
       },
       "@media (min-width:1536px)": {
-        fontSize: "26px",
+        fontSize: "24px",  // Decreased from 26px
       },
     },
     subtitle2: {
       fontFamily: 'Gilroy, Poppins, sans-serif',
-      fontSize: "16px",
+      fontSize: "14px",
       color: "#ffffff",
       "@media (min-width:600px)": {
-        fontSize: "18px",
+        fontSize: "16px",  // Decreased from 18px
       },
       "@media (min-width:900px)": {
-        fontSize: "20px",
+        fontSize: "18px",  // Decreased from 20px
       },
       "@media (min-width:1200px)": {
-        fontSize: "22px",
+        fontSize: "20px",  // Decreased from 22px
       },
       "@media (min-width:1536px)": {
-        fontSize: "24px",
+        fontSize: "22px",  // Decreased from 24px
       },
     },
     body1: {
       fontFamily: 'Gilroy, Poppins, sans-serif',
-      fontSize: "14px",
+      fontSize: "12px",
       color: "#ffffff",
       "@media (min-width:600px)": {
-        fontSize: "16px",
+        fontSize: "14px",  // Decreased from 16px
       },
       "@media (min-width:900px)": {
-        fontSize: "18px",
+        fontSize: "16px",  // Decreased from 18px
       },
       "@media (min-width:1200px)": {
-        fontSize: "20px",
+        fontSize: "18px",  // Decreased from 20px
       },
       "@media (min-width:1536px)": {
-        fontSize: "22px",
+        fontSize: "20px",  // Decreased from 22px
       },
     },
     body2: {
       fontFamily: 'Gilroy, Poppins, sans-serif',
-      fontSize: "12px",
+      fontSize: "10px",
       color: "#ffffff",
       "@media (min-width:600px)": {
-        fontSize: "12px",
+        fontSize: "12px",  // Decreased from 14px
       },
       "@media (min-width:900px)": {
-        fontSize: "16px",
+        fontSize: "14px",  // Decreased from 16px
       },
       "@media (min-width:1200px)": {
-        fontSize: "17px",
+        fontSize: "16px",  // Decreased from 18px
       },
       "@media (min-width:1536px)": {
-        fontSize: "18px",
+        fontSize: "18px",  // Decreased from 20px
       },
     },
     caption: {
       fontFamily: 'Gilroy, Poppins, sans-serif',
-      fontSize: "10px",
+      fontSize: "8px",
       color: "#ffffff",
       "@media (min-width:600px)": {
-        fontSize: "12px",
+        fontSize: "10px",  // Decreased from 12px
       },
       "@media (min-width:900px)": {
-        fontSize: "14px",
+        fontSize: "12px",  // Decreased from 14px
       },
       "@media (min-width:1200px)": {
-        fontSize: "16px",
+        fontSize: "14px",  // Decreased from 16px
       },
       "@media (min-width:1536px)": {
-        fontSize: "18px",
+        fontSize: "16px",  // Decreased from 18px
       },
     },
     overline: {
       fontFamily: 'Gilroy, Poppins, sans-serif',
-      fontSize: "8px",
+      fontSize: "6px",
       color: "#ffffff",
       "@media (min-width:600px)": {
-        fontSize: "10px",
+        fontSize: "8px",  // Decreased from 10px
       },
       "@media (min-width:900px)": {
-        fontSize: "12px",
+        fontSize: "10px",  // Decreased from 12px
       },
       "@media (min-width:1200px)": {
-        fontSize: "14px",
+        fontSize: "12px",  // Decreased from 14px
       },
       "@media (min-width:1536px)": {
-        fontSize: "16px",
+        fontSize: "14px",  // Decreased from 16px
       },
     },
   },
@@ -437,3 +437,7 @@ export const theme = createTheme({
     },
   },
 });
+
+
+
+

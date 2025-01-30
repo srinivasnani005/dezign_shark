@@ -33,7 +33,7 @@ const Layout: React.FC = () => {
   return (
     <Box className="layout-container">
       <Box className={`header ${isScrolled ? 'header-scrolled' : 'header-transparent'}`}>
-        <Header selectedTab={selectedTab} onTabChange={setSelectedTab} />
+        {/* <Header selectedTab={selectedTab} onTabChange={setSelectedTab} /> */}
       </Box>
       <Box className="content-container">
         <Outlet />

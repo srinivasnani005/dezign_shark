@@ -5,7 +5,7 @@ import { WebDevelopmentImages } from '../../../assets';
 import SliderOne from '../../../Components/Sliders/SliderOne';
 import SubBlog from '../../../Components/SubBlog/SubBlog';
 import ServiceForm from '../../../Components/Forms/ServicesForm';
-import Footer from '../../Footer/Footer';
+import Footer from '../../Old/Footer/Footer';
 
 const GraphicDesigning: React.FC = () => {
 

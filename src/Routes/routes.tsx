@@ -1,9 +1,15 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import { Dashboard, NotFound, About, Gallery, ContactUs, Blog, GraphicDesigning, WebDevelopment, Branding, SEO, SMM, PPC, CardData, DigitalMarketing } from "../Pages/Exports/Exports";
-import Layout from '../Layout/Layout';
+// import { Dashboard, NotFound, About, Gallery, ContactUs, Blog, GraphicDesigning, WebDevelopment, Branding, SEO, SMM, PPC, CardData, DigitalMarketing } from "../Pages/Exports/Exports";
+import Layout from "../LayoutTwo/Layout";
+import DashboardTwo from "../Pages/DashboardTwo";
+import AboutUs from "../Pages/AboutUs";
+import { NotFound } from "../Pages/Exports/Exports";
+
+
 
 const router = createBrowserRouter([
   {
+    // element: <Layout />,
     element: <Layout />,
     children: [
       {
@@ -11,57 +17,65 @@ const router = createBrowserRouter([
         element: <Navigate to="/dashboard" replace />,
       },
       {
+        path: "/aboutus",
+        element: <AboutUs />,
+      },
+      // {
+      //   path: "/dashboard",
+      //   element: <Dashboard />,
+      // },
+      {
         path: "/dashboard",
-        element: <Dashboard />,
+        element: <DashboardTwo />,
       },
-      {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path : "/services/digital-marketing",
-        element : <DigitalMarketing />
-      },
-      {
-        path: "/services/digital-marketing/seo",
-        element: <SEO />,
-      },
-      {
-        path: "/services/digital-marketing/smm",
-        element: <SMM />,
-      },
-      {
-        path: "/services/digital-marketing/ppc",
-        element: <PPC />,
-      },
-      {
-        path: "/services/graphic-designing",
-        element: <GraphicDesigning />,
-      },
-      {
-        path: "/services/web-development",
-        element: <WebDevelopment />,
-      },
-      {
-        path: "/services/branding",
-        element: <Branding />,
-      },
-      {
-        path: "/blog",
-        element: <Blog />,
-      },
-      {
-        path: "/gallery",
-        element: <Gallery />,
-      },
-      {
-        path: "/contact-us",
-        element: <ContactUs />,
-      },
-      {
-        path: "/insights/:id",
-        element: <CardData />,
-      },
+      // {
+      //   path: "/about",
+      //   element: <About />,
+      // },
+      // {
+      //   path : "/services/digital-marketing",
+      //   element : <DigitalMarketing />
+      // },
+      // {
+      //   path: "/services/digital-marketing/seo",
+      //   element: <SEO />,
+      // },
+      // {
+      //   path: "/services/digital-marketing/smm",
+      //   element: <SMM />,
+      // },
+      // {
+      //   path: "/services/digital-marketing/ppc",
+      //   element: <PPC />,
+      // },
+      // {
+      //   path: "/services/graphic-designing",
+      //   element: <GraphicDesigning />,
+      // },
+      // {
+      //   path: "/services/web-development",
+      //   element: <WebDevelopment />,
+      // },
+      // {
+      //   path: "/services/branding",
+      //   element: <Branding />,
+      // },
+      // {
+      //   path: "/blog",
+      //   element: <Blog />,
+      // },
+      // {
+      //   path: "/gallery",
+      //   element: <Gallery />,
+      // },
+      // {
+      //   path: "/contact-us",
+      //   element: <ContactUs />,
+      // },
+      // {
+      //   path: "/insights/:id",
+      //   element: <CardData />,
+      // },
     ],
   },
   {

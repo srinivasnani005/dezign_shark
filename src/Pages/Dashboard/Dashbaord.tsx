@@ -4,19 +4,20 @@ import DashboardMiddle from './DashboardMiddle';
 import DashboardBottom from './DashboardBottom';
 import LogoSlider from './LogoSlider';
 import BrandSection from './DataSection/BrandSection';
-import { brandsectionimage } from '../../assets';
+import { brandsectionimage, ds_about } from '../../assets';
+import { brandsectionimage1 } from '../../assets';
 import ServiceSection from './Services/ServicesSection';
 import Reviews  from './Reviews/Reviews';
 import Insights from './Insights/Insights';
 import GetBrochure from './GetBrochure/GetBrochure';
-import Footer from '../Footer/Footer';
+import Footer from '../Old/Footer/Footer';
 import SectionOne from '../../Components/Sections/SectionOne';
 
 const Dashboard: React.FC = () => {
   const BrandSectiondata = {
-    title: 'Transform Your Brand with the Best Digital Marketing Agency in Hyderabad',
-    description: 'Welcome to Dezign Shark, the top digital marketing agency in Hyderabad, renowned for our innovative and effective marketing strategies. As the best digital marketing agency in Hyderabad, we specialize in crafting tailored solutions that elevate your brand and engage your audience. With a team of experts dedicated to your success, we dive deep into your brand\'s essence to create compelling campaigns that resonate with your target market.\n\n Join us at Dezign Shark and experience unparalleled digital excellence as your brand transforms and thrives in the digital world. If you\'re searching for a digital marketing agency in Hyderabad that delivers results, look no further.',
-    image: brandsectionimage,
+    title: 'Discover Dezign Shark: The Best Digital Marketing Agency in Hyderabad',
+    description: 'Welcome to Dezign Shark, the best digital marketing agency in Hyderabad, India, committed to transforming your business with cutting-edge online marketing solutions. As a trusted digital marketing company in Hyderabad, we specialize in delivering results-driven SEO, PPC, Google Ads, Facebook Ads, and social media management services. Our team of experts, ranked among the top digital marketing firms, combines creativity and strategy to boost your brand visibility and drive measurable growth.\n\n Dezign Shark stands out as one of the best digital marketing agencies in Hyderabad, offering tailored solutions to meet diverse business needs. From branding to comprehensive internet marketing services, our digital marketing services provider ensures optimal ROI for every campaign. Partner with us, a leading online marketing agency in India, to experience the best digital marketing services designed to empower your business in today\'s competitive digital landscape.',
+    image: ds_about,
     buttonText: 'Request a Demo'
   };
 
@@ -27,7 +28,7 @@ const Dashboard: React.FC = () => {
       <SectionOne data={BrandSectiondata} />
       <ServiceSection />
       <Reviews />
-      <Insights />
+      {/* <Insights /> */}
       <GetBrochure />
       <Footer />
     </>

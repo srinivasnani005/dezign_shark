@@ -1,8 +1,8 @@
-export {default as About} from '../About/About';
-export {default as Blog} from '../Blog/Blog';
-export {default as ContactUs} from '../ContactUs/ContactUs';
-export {default as Dashboard} from '../Dashboard/Dashbaord';
-export {default as Gallery} from '../Gallery/Gallery';
+// export {default as About} from '../About/About';
+// export {default as Blog} from '../Blog/Blog';
+// export {default as ContactUs} from '../ContactUs/ContactUs';
+// export {default as Dashboard} from '../Dashboard/Dashbaord';
+// export {default as Gallery} from '../Gallery/Gallery';
 export {default as NotFound} from '../NotFound/NotFound';
 export {default as SEO} from '../Services/DigitalMarketing/SEO/SEO';
 export {default as SMM} from '../Services/DigitalMarketing/SMM/SMM';

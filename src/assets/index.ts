@@ -1,7 +1,9 @@
 import dezignshark from './logos/dezignshark.png';
 import google from './logos/google.png';
 import backgroundshark from './images/backgroundshark.png';
-import MainVideo from './Videos/MainVideo.mp4';
+import backgroundshark1 from './images/backgroundshark1.png';
+// import MainVideo from './Videos/MainVideo.mp4';
+import ds_about from './images/ds-about.png'
 
 
 import slider1 from './logos/Slider/slider1.png';
@@ -129,6 +131,7 @@ import smm2 from './images/SMM/smm2.jpg';
 
 //SEO
 import seo1 from './images/SEO/seo1.jpg';
+import seowithoutbg from './images/SEO/seowithoutbg.png';
 import seo2 from './images/SEO/seo2.jpg';
 
 //PPC
@@ -152,10 +155,46 @@ import insights3 from './images/insights3.jpeg';
 //about us 
 
 import aboutus from './images/Aboutus.jpg';
+import seo from './images/seo.png'
+import pay_per_click from './images/pay-per-click.png'
+import content_management from './images/content-management.png'
 
 
 import rajiv from './images/persons/rajiv.jpg';
 import priya from './images/persons/priya.png';
+import banner from './images/banner.jpg'
+import download from './images/Dashboard/download.png'
+import dashboardbg from './images/Dashboard/banner-one-shape.png'
+import whychoose from './images/Dashboard/why-choose-image.jpg'
+import abouttwo from './images/Dashboard/about2.jpg'
+import aboutthree from './images/Dashboard/about3.jpg'
+import aboutshap from './images/Dashboard/about-one-shape-2.png'
+import video from './images/Dashboard/video.jpg'
+import servicesbg from './images/Dashboard/services-one-bg.png'
+import serviceimg from './images/Dashboard/serviceimg.jpg'
+import project from './images/Dashboard/project1.jpg'
+import packagesbg from './images/Dashboard/pacakgesbg.jpg'
+import trione from './images/Dashboard/trione.png'
+import tritwo from './images/Dashboard/tritwo.png'
+import testione from './images/Dashboard/testione.jpg'
+import blog from './images/Dashboard/blog.jpg'
+import footerbg from './images/Dashboard/footer.jpg'
+import blogbg from './images/Dashboard/blogbg.jpg'
+
+
+//aboutus
+import aboutbanner from './images/aboutus/aboutbanner.jpg'
+import aboutshape_1 from './images/aboutus/page-header-shape.png'
+import aboutshape_2 from './images/aboutus/page-header-line-shape.png'
+import vector from './images/aboutus/vector.png'
+import countershape from './images/aboutus/counter-shape.jpg'
+
+export {
+    ds_about,seo, pay_per_click,content_management ,banner,download,dashboardbg,
+    whychoose,abouttwo,aboutthree,aboutshap,video,servicesbg,serviceimg,project,packagesbg,
+    trione,tritwo,testione,blog,footerbg,blogbg,countershape
+
+}
 
 export const SliderLogos = {
     slider1,
@@ -178,12 +217,19 @@ export const SliderLogos = {
     slider18,
     slider19,
 }
+export const AboutTwo={
+    aboutbanner,
+    aboutshape_1,
+    aboutshape_2,vector
+
+}
 
 
 export const logos = {
     dezignshark,
     google,
     backgroundshark,
+    backgroundshark1,
 }
 
 export const Aboutus = {
@@ -222,7 +268,7 @@ export const GalleryImages = {
 }
 
 //Main Video
-export { MainVideo };
+// export { MainVideo };
 
 
 //web development
@@ -255,6 +301,7 @@ export const SMMImages = {
 export const SEOImages = {
     seo1,
     seo2,
+    seowithoutbg,
 }
 
 
@@ -277,6 +324,7 @@ export const ServiceImages = {
 }
 
 export {default as brandsectionimage } from './images/brandsection.jpg';
+export {default as brandsectionimage1 } from './images/brandsection1.png';
 //Slider Logos
 
 

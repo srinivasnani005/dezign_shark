@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Typography, Grid, Card, CardContent, Avatar, IconButton } from '@mui/material';
+import { Box, Typography, Grid, Card, CardContent, Avatar, IconButton, Container } from '@mui/material';
 import { Star } from '@mui/icons-material';
 import { logos, ReviewsImages } from '../../../assets'; // Ensure this import path is correct
 
@@ -49,97 +49,112 @@ const Reviews: React.FC = () => {
 
   return (
     <Box
-      sx={{
-        backgroundColor: '#000',
-        color: '#fff',
-        px: { xs: 3, sm: 5, md: 7 },
-        py: { xs: 1, sm: 2, md: 2 }, 
-        // mt: { xs: 0, sm: '-30px', md: '-60px' }, 
-        textAlign: 'center',
-      }}
+    sx={{
+      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+      backdropFilter: 'blur(6px)',
+      width: '100%',
+      boxShadow: 'none',
+    }}
+    pt={8}
+    pb={8}
     >
-      <Typography
-        variant="h3"
-        sx={{ fontWeight: 700, mb: 5, maxWidth: '80%' , margin : '0 auto' }}
-      >
-        Hear from Our Satisfied Clients
-      </Typography>
 
-      <Grid container spacing={4} justifyContent="center">
-        {reviews.map((review, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <Card
-              sx={{
-                backgroundColor: '#333',
-                color: '#fff',
-                display: 'flex',
-                flexDirection: 'column',
-                borderRadius: '10px',
-                mt: { xs: 2, sm: 3, md: 4 },
-                p: { xs: 1, sm: 2 , md: 1 },
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                '&:hover': {
-                  boxShadow: '0 15px 30px rgba(0,0,0,0.4)',
-                  transform: 'translateY(-8px)',
-                  cursor: 'pointer',
-                },
-              }}
-            >
-              <CardContent sx={{ flexGrow: 1 }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                  <Avatar
-                    src={review.profilePic}
-                    sx={{ width: 50, height: 50, mr: 2 }}
-                  />
-                  <Box sx={{ flexGrow: 1 }}>
-                    <Typography variant="body2" sx={{ fontWeight: 700 }}>
-                      {review.name}
-                    </Typography>
-                    <Typography variant="caption" sx={{ color: '#aaa' }}>
-                      {review.date}
-                    </Typography>
-                  </Box>
-                  <IconButton>
-                    <img src={logos.google} alt="Google logo" style={{ width: 40, height: 40 }} />
-                  </IconButton>
-                </Box>
-                <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} sx={{ color: i < review.rating ? '#ffcc00' : '#555' }} />
-                  ))}
-                </Box>
-                <Box
+      <Container>
+
+        <Box
+          sx={{
+            // backgroundColor: '#000',
+            color: '#fff',
+            // px: { xs: 3, sm: 5, md: 7 },
+            // py: { xs: 1, sm: 2, md: 2 }, 
+            // mt: { xs: 0, sm: '-30px', md: '-60px' }, 
+            textAlign: 'center',
+          }}
+        >
+          <Typography
+            variant="h3"
+            sx={{ fontWeight: 700, mb: 5, maxWidth: '80%' , margin : '0 auto' }} 
+          >
+            Hear from Our Satisfied Clients
+          </Typography>
+
+          <Grid container spacing={4} justifyContent="center" mt={1} >
+            {reviews.map((review, index) => (
+              <Grid item xs={12} sm={6} md={4} key={index}>
+                <Card
                   sx={{
-                    overflow: 'hidden',
-                    transition: 'max-height 0.5s ease',
-                    maxHeight: expandedReviewIndex === index ? '400px' : '100px',
-                    // Adjust the maxHeight value as needed
+                    backgroundColor: '#333',
+                    color: '#fff',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    borderRadius: '10px',
+                    mt: { xs: 2, sm: 3, md: 4 },
+                    p: { xs: 1, sm: 2 , md: 1 },
+                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                    '&:hover': {
+                      boxShadow: '0 15px 30px rgba(0,0,0,0.4)',
+                      transform: 'translateY(-8px)',
+                      cursor: 'pointer',
+                    },
                   }}
                 >
-                  <Typography
-                    variant="body2"
-                    sx={{ color: '#ccc', mb: 2, textAlign: 'justify', whiteSpace: 'pre-line' }}
-                  >
-                    {review.description}
+                  <CardContent sx={{ flexGrow: 1 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                      <Avatar
+                        src={review.profilePic}
+                        sx={{ width: 50, height: 50, mr: 2 }}
+                      />
+                      <Box sx={{ flexGrow: 1 }}>
+                        <Typography variant="body2" sx={{ fontWeight: 700 }}>
+                          {review.name}
+                        </Typography>
+                        <Typography variant="caption" sx={{ color: '#aaa' }}>
+                          {review.date}
+                        </Typography>
+                      </Box>
+                      <IconButton>
+                        <img src={logos.google} alt="Google logo" style={{ width: 40, height: 40 }} />
+                      </IconButton>
+                    </Box>
+                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} sx={{ color: i < review.rating ? '#ffcc00' : '#555' }} />
+                      ))}
+                    </Box>
+                    <Box
+                      sx={{
+                        overflow: 'hidden',
+                        transition: 'max-height 0.5s ease',
+                        maxHeight: expandedReviewIndex === index ? '400px' : '110px',
+                        // Adjust the maxHeight value as needed
+                      }}
+                    >
+                      <Typography
+                        variant="body2"
+                        sx={{ color: '#ccc', mb: 2, textAlign: 'justify', whiteSpace: 'pre-line' }}
+                      >
+                        {review.description}
 
-                  </Typography>
-                </Box>
-                <span
-                  onClick={() => handleToggleDescription(index)}
-                  style={{
-                    color: '#fc0000',
-                    cursor: 'pointer',
-                    textDecoration: 'underline',
-                    textAlign : 'right'
-                  }}
-                >
-                  {expandedReviewIndex === index ? ' Hide' : ' Read More'}
-                </span>
-              </CardContent>
-            </Card>
+                      </Typography>
+                    </Box>
+                    <span
+                      onClick={() => handleToggleDescription(index)}
+                      style={{
+                        color: '#fc0000',
+                        cursor: 'pointer',
+                        textDecoration: 'underline',
+                        textAlign : 'right'
+                      }}
+                    >
+                      {expandedReviewIndex === index ? ' Hide' : ' Read More'}
+                    </span>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
           </Grid>
-        ))}
-      </Grid>
+        </Box>
+      </Container>
     </Box>
   );
 };

@@ -5,7 +5,9 @@ import { SEOImages, WebDevelopmentImages } from '../../../../assets';
 import SliderOne from '../../../../Components/Sliders/SliderOne';
 import SubBlog from '../../../../Components/SubBlog/SubBlog';
 import ServiceForm from '../../../../Components/Forms/ServicesForm';
-import Footer from '../../../Footer/Footer';
+import Footer from '../../../Old/Footer/Footer';
+import { styled } from '@mui/material/styles';
+import { Box } from '@mui/material';
 
 const SEO: React.FC = () => {
 
@@ -20,7 +22,7 @@ const SEO: React.FC = () => {
     const data2 ={
         subtitle: "Maximize Your ROI with Our Best SEO Services in Hyderabad",
         description1: "Our team of experts offers the best SEO services in Hyderabad, mastering the intricacies of search engine algorithms to help you increase website traffic, improve keyword rankings, and boost conversions. We pride ourselves on delivering measurable results that significantly impact your online presence. \n \n We employ advanced techniques to ensure your SEO strategy remains effective and current. This includes SEO-rich snippets, which enhance the visibility of your content in search results, attracting more clicks from potential customers. Additionally, we perform continuous rank tracking, monitoring your progress and adjusting strategies as needed to stay ahead of ever-evolving algorithms.",
-        description2: "Our approach is data-driven and tailored to meet your business’s unique needs. We analyse your website, identify areas for improvement, and implement targeted strategies to enhance your search engine performance. Our team stays updated with industry trends and best practices, ensuring your SEO efforts are always aligned with the latest developments. \n \n Choose our best SEO services in Hyderabad for a dedicated partner committed to helping you achieve sustainable growth and long-term success in the digital landscape. Experience the difference with a team that prioritises your business goals and delivers results that matter.",
+        description2: "Our approach is data-driven and tailored to meet your business’s unique needs. We analyse your website, identify areas for improvement, and implement targeted strategies to enhance your search engine performance. Our team stays updated with industry trends and best practices, ensuring your SEO efforts are always aligned with the latest developments.",
         imageSrc: SEOImages.seo2,
     }
 
@@ -43,12 +45,12 @@ const SEO: React.FC = () => {
       },
       {
         subheading: "Content Creation",
-        description: "Our content creation services produce SEO-friendly content that engages your audience, positions your brand as an industry leader, and drives organic traffic. By creating high-quality, relevant articles and multimedia content, we boost your online presence, attract more visitors, and convert them into loyal customers.",
+        description: "Our content services create SEO-friendly, engaging content that boosts online presence, drives traffic, and converts visitors into loyal customers.",
         buttonText: "Get a Free Quote",
       },
       {
         subheading: "SEO Rich Snippets",
-        description: "Our SEO rich snippets implementation enhances search engine listings with structured data, improving visibility and click-through rates. Using advanced markup techniques, we make your content stand out in search results, providing users with relevant information at a glance and driving targeted traffic to your site. This boosts your online presence and increases the likelihood of converting visitors into customers.",
+        description: "Our SEO snippets enhance visibility, boost click-through rates, and drive targeted traffic, increasing conversions by standing out in search results",
         buttonText: "Get a Free Quote",
       },
     ];
@@ -82,7 +84,15 @@ const SEO: React.FC = () => {
         <>
             <PageHeader value="Search Engine Optimization (SEO)" />
             <SectionTwo data={data1} alignment="left" />
-            <SectionTwo data={data2} alignment="right" />
+            <Box  sx={{
+      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+      backdropFilter: 'blur(6px)',
+      width: '100%',
+      boxShadow: 'none',
+    }}>
+              
+              <SectionTwo data={data2} alignment="right"  />
+            </Box>
             <SliderOne cards={SliderCard} title={SliderHeader} />
             <SubBlog data={sampleData} />
             <ServiceForm />
